@@ -2,7 +2,9 @@
 ***	Header Format 
 ***/
 .Header{
-	background-color: #002E5D;
+	background-color: RoyalBlue ;
+	/**#002E5D
+	*/
 	position: fixed;
 	overflow: hidden;
 	top: 0;
@@ -96,13 +98,14 @@
 }
 .bodyMenu li.first{
 	border-left: 2px solid darkgrey;
+	background-color: Gainsboro;
 }
 .bodyMenu a.notactive{
 	background-color: #B9B8B8 ;
 }
 .bodyMenu li.active{
 	background-color: Gainsboro;
-	border-bottom: none;
+
 }
 
 /***
