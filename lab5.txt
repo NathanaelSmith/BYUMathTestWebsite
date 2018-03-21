@@ -1,0 +1,278 @@
+///DEQUE
+#include<iostream>
+using namespace std;
+
+template<typename T>
+class Deque public: DequeInterface{
+private:
+	static const size_t DEFAULT_CAPACITY = 4;
+	size_t capacity;
+	T*  the_data[capacity];
+    size_t  front_index;
+    size_t  rear_index;
+    size_t  num_items;
+
+public:
+
+	Deque(void){
+		capacity(DEFAULT_CAPACITY),
+		num_items(0),
+		front_index(0),
+		rear_index(DEFAULT_CAPACITY - 1),
+		the_data(new T[DEFAULT_CAPACITY]) {}
+	}
+
+	void reallocate(){
+		size_t new_capacity = 2 * capacity;
+		T* new_data = new T[new_capacity];
+		size_t j = front_index;
+		for (size_t i = 0; i < num_items; i++){
+			new_data[i] = the_data[j];
+			j = (j + 1) % capacity;
+		}
+		front_index = 0;
+		rear_index = num_items – 1;
+		capacity = new_capacity;
+		std::swap(the_data, new_data);
+		delete[] new_data;
+	}
+
+
+	virtual void push_front(const T& value){
+		   if (num_items == capacity){
+				reallocate();
+			}
+
+
+		if (front_index == -1){
+			front_index = 0;
+			rear_index = 0;
+		}
+ 
+		else if (front_index == 0){
+			front_index = num_items - 1 ;
+		}
+ 
+		else{ 
+			front_index = front_index-1;
+		}
+ 
+		the_data[front_index] = value;
+	}
+
+	virtual void push_back(const T& value){
+		if (front_index == -1){
+        front_index = 0;
+        rear_index = 0;
+		}
+ 
+		else if (rear_index == num_items-1){
+        rear_index = 0;
+		}
+ 
+		else{ 
+			rear_index = rear_index+1;
+		}
+ 
+		the_data[rear_index] = value;
+		}
+	}
+
+	virtual void pop_front(void){
+		if (empty()){
+			cout << "Queue Underflow\n" << endl;
+			return ;
+		}
+ 
+		if (front == rear_index){
+			front_index = -1;
+			rear_index = -1;
+		}
+		else{
+			if (front_index == num_items -1){
+				front_index = 0;
+			}
+			else {
+				front_index = front_index+1;
+			}
+		}
+	}
+
+	virtual void pop_back(void){
+		if (empty()){
+			cout << "Queue Underflow\n" << endl;
+			return ;
+		}
+ 
+		if (front == rear_index){
+			front_index = -1;
+			rear_index = -1;
+		}
+		if (rear_index == 0){
+			rear_index = num_items -1;
+		}
+		else {
+			rear_index = rear_index-1;
+		}
+	}
+	virtual T& front(void){
+		if (isEmpty()){
+			cout << " Underflow\n" << endl;
+			return -1 ;
+		}
+		return the_data[front_index];
+	}
+
+	virtual T& back(void){
+		if (isEmpty()){
+			cout << " Underflow\n" << endl;
+			return -1 ;
+		}
+		return the_data[rear_index];
+	}
+
+	virtual size_t size(void){
+		return num_items;
+	}
+
+	virtual bool empty(void){
+		 return (front_index == -1);
+	}
+
+	virtual T& at(size_t index){
+		
+	}
+
+	virtual string toString() {
+	
+	}
+	
+}
+
+
+
+
+
+//////STACK
+#include "Deque.h"
+template <typename T>
+class Stack{
+private:
+   Deque<T> stack_;
+public:
+	Stack()
+	~Stack()
+	void push(T data){
+		stack_.push_back(data);
+	}
+	void pop(void){
+		return stack_.pop_back();
+	}
+	T& top(){
+	}
+	size_t size(){
+		
+	}
+	T& at(size_t){
+	}
+	string toString const (){
+		
+	}
+ 
+};
+
+
+
+////Queue
+#include "Deque.h"
+template <typename T>
+class Queue{
+private:
+   Deque<T> queue_;
+public:
+	Queue()
+	~Queue()
+	void push(T data){
+		queue_.push_back(data);
+	}
+	void pop(void){
+		return queue_.pop_front();
+	}
+	T& top(){
+	}
+	size_t size(){
+	}
+	string toString const (){
+		
+	}
+};
+
+//Vector
+#include "Deque.h"
+class Vector{
+private:
+   Deque<T> vector_;
+public:
+	Vector()
+	~Vector()
+	void push_back(T data){
+		queue_.push_back(data);
+	}
+	void pop_back(void){
+		return queue_.pop_front();
+	}
+	T& back(){
+	}
+	size_t size(){
+	}
+	T& at(size_t){
+	}
+	string toString(){
+	}
+}
+
+///Station
+#include "Stack.h"
+#include "Vector.h"
+#include "Queue.h"
+
+class Station{
+public:
+Vector<T> train_;
+Stack<T> stack_;
+Queue<T> queue_;
+T turnTableCar_;
+bool empty;
+
+private:
+
+Station()
+~Station()
+string addCar(const T&){
+}
+string removeCar(){
+}
+string topCar(){
+}
+string addStack(){
+}
+string removeStack(){
+}
+string topStack(){
+}
+string sizeStack(){
+}
+string addQueue(){
+}
+string removeQueue(){
+}
+string topQueue(){
+}
+string sizeQueue(){
+}
+string find(T){
+}
+string toString() const{
+}
+
+}

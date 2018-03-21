@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>BYU Math T.P.S.</title>
+<title>BYU Math Grading </title>
 <head>
 <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Goblin+One" rel="stylesheet">
@@ -10,32 +10,56 @@
 		<img src="byulogo.png" alt="BYU Logo">
 		
 		<ul>
-			<li><a>Project</a></li>
-			<li><a>Edit</a></li>
-			<li><a>Tools</a></li>
-			<li><a>Help</a></li>
-			<li><a>Logout</a></li>
+			<li><a class = "label1">Project</a></li>
+			<li><a class = "label2">Edit</a></li>
+			<li><a class = "label3">Tools</a></li>
+			<li><a class = "label4">Help</a></li>
+			<li><a class = "label5" href="index.html">Logout</a></li>
 		</ul>
 	</div> 
 	<div class="theBody">
 	<div class="bodyMenu">
 		<ul>
-			<li><a class="notactive first" href="index.html">Prepartion</a></li>
+			<li><a class="notactive first" href="preparation.html">Prepartion</a></li>
 			<li><a class="active">Data Capture</a></li>
 			<li><a class="notactive" href="marking.html">Marking</a></li>
 			<li><a class="notactive" href="report.html">Reports</a></li>
 		</ul>
 	</div>
 	<div class="tbody">
-		<p>Data capture after examination</p>
-		<button><i class="fas fa-edit"></i>Automatic</button>
-		<button><i class="fas fa-edit"></i>Manual</button>
+		<div class="dataCap">
+			<p>Data capture after examination</p>
+			<button><i class="fas fa-clipboard-check"></i>Automatic</button>
+			<button><i class="far fa-hand-pointer"></i>Manual</button>
+		</div>
 		<hr>
+		<div class="diagnosis">
 		<p>Diagnosis</p>
-		<p>Pages</p>
-		<button><i class="fas fa-edit"></i>Zooms</button>
+		<div class="dataPages">
+		<p>Pages:</p>
+		</div>
+
+		<div class="dataTable">
+		<table>
+			<tr>
+				<th>identifier</th>
+				<th>updated</th>
+				<th>MSE</th>
+				<th>sensitivity</th>
+			</tr>
+			<tr>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+			</tr>
+		</table>
+		</div>
+		<div class="tableButtons">
+		<button><i class="fas fa-search-plus"></i>Zooms</button>
 		<button><i class="fas fa-edit"></i>Layout</button>
-		<button><i class="fas fa-edit"></i>Remove</button>
+		<button><i class="fas fa-trash-alt"></i>Remove</button>
+		</div>
 		<div class="lineCircle">
 			<div class="circle"></div>
 			<p>Data capture from {{papers}} comlete papers</p>
@@ -44,7 +68,7 @@
 			<div class="circle"></div>
 			<p>All Scans were properly recognized</p>
 		</div>
-	
+		</div>
 	
 	
 	</div>
