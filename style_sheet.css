@@ -52,7 +52,7 @@
     padding: 20px;
 }
 
-.loginPage input[type=text], select {
+.loginPage input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -60,6 +60,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+	font-family: 'Arimo', sans-serif;
 }
 .loginPage input[type=password] {
     width: 100%;
@@ -69,6 +70,8 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+	font-family: 'Arimo', sans-serif;
+
 }
 .loginPage input[type=submit] {
     width: 100%;
@@ -79,6 +82,8 @@
     border-radius: 4px;
     box-sizing: border-box;
 	font-weight: bold;
+	font-family: 'Arimo', sans-serif;
+
 }
 .loginPage input[type=submit]:hover {
 	background-color: darkgrey;
@@ -188,12 +193,14 @@
 	overflow: hidden;
 	width: 100%;
 	margin-top: 70px;
+	margin-bottom: 20px;
+	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, .25);
 }
 
 .bodyMenu li{
 	float: left;
 	width: 150px;
-	
+	display: inline-block;
 }
 
 .bodyMenu li a{
@@ -203,11 +210,8 @@
 	padding: 14px 16px;
 	font-size: 16px;
 	text-decoration: none;
-	border-top: 2px solid darkgrey;
-	border-right: 2px Solid darkgrey;
 }
 .bodyMenu li.first{
-	border-left: 2px solid darkgrey;
 	background-color: Gainsboro;
 }
 .bodyMenu a.notactive{
@@ -223,6 +227,7 @@
 ***/
 body{
 	font-family: "Arial", sans-serif;
+	background-color: #f2f2f2;
 }
 body p{
 	font-size: 18px;
@@ -230,16 +235,18 @@ body p{
 }
 
 button{
-	border: 1px solid black;
-	border-radius: 3px;
+	font-weight: bold;
+	color: #f2f2f2;
+	background-color:   #4f74e3;
+	border: none;
+	border-radius: 5px;
 	padding: 8px;
 	font-size: 16px;
-	box-shadow: 1px 1px grey;
 	margin-bottom: 3px;
 	margin-left: 5px;
 }
 button:hover{
-	background-color: darkgrey;
+	background-color:  #2251dd;
 }
 
 .numPages{
@@ -285,9 +292,11 @@ button:hover{
 }
 
 .tbody{
-	border: 2px solid darkgrey;
+	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, .25);
+	
 	border-radius: 5px;
-	background-color: Gainsboro;
+	background-color: white;
+	padding: 3px;
 }
 
 .lineCircle {
