@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<title>BYU Math Grading</title>
+<head>
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Goblin+One" rel="stylesheet">
+<link rel="stylesheet" href="style_sheet.css" >
+</head>
+<body>
+	<div class="Header">
+		<img src="byulogo.png" alt="BYU Logo">
+		
+		<ul>
+			<li><a class = "label1">Project</a></li>
+			<li><a class = "label2">Edit</a></li>
+			<li><a class = "label3">Tools</a></li>
+			<li><a class = "label4">Help</a></li>
+			<li><a class = "label5" href="index.html">Logout</a></li>
+		</ul>
+	</div> 
+	<div class="theBody">
+	<div class="bodyMenu">
+		<ul>
+			<li><a class="notactive first" href="preparation.html">Prepartion</a></li>
+			<li><a class="notactive" href="data_capture.html">Data Capture</a></li>
+			<li><a class="active" href="marking.html">Marking</a></li>
+			<li><a class="notactive" href="report.html">Reports</a></li>
+		</ul>
+	</div>
+	<div class="tbody">
+		<p>Marking</p>
+		<input type="checkbox" name="Absentees" value="absent">Update Marking Scale<br>
+		<button><i class="fas fa-edit"></i>Mark</button>
+		<button><i class="fas fa-edit"></i>Look at Marks</button>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>Mean: {{mean_marks}}</p>
+		</div>
+		<hr>
+		<p>Student Identification</p>
+		<button><i class="fas fa-edit"></i>Set file</button>
+		<button><i class="fas fa-edit"></i>path</button>
+		<button><i class="fas fa-edit"></i>Edit List</button>
+		<button><i class="fas fa-edit"></i>Automatic</button>
+		<button><i class="fas fa-edit"></i>Manual</button>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>All completed answer sheets are associated with a student name</p>
+		</div>
+		<br>
+	</div>
+	</div>
+</body>
+
+</html> 
