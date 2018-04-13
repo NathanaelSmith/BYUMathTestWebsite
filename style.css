@@ -1,0 +1,76 @@
+.loginBody{
+	margin: none;
+	background-color: #f2f2f2; 
+	
+}
+
+.projectSelect{
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 70px;
+	height: 450px;
+	width: 700px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, .25);
+}
+
+.projectMenu ul{
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	margin-top: 70px;
+	margin-bottom: 20px;
+	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, .25);
+}
+
+.projectMenu li{
+	float: left;
+	width: 50%;
+	display: inline-block;
+}
+
+
+
+.projectMenu li button{
+	height: 45px;
+	width: 100%;
+	background-color: deepskyblue;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	font-size: 17px;
+	font-family: 'Arimo', sans-serif;
+}
+
+.newProject{ 
+
+}
+
+.newProject{
+	font-family: 'Arimo', sans-serif;
+	font-size: 18px;
+	text-align: center;	
+}
+
+.newProject input[type=text] {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px solid deepskyblue;
+
+}
+
+.newProject input[type=submit] {
+    padding:5px 15px;
+    margin-top: 25px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px;
+    border-radius: 5px; 
+}
+
