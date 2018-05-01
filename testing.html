@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<title>BYU Math Grading</title>
+<head>
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+<script src="script.js"></script>
+<link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+
+<!-- Login Form -->
+<div class="loginBody" id="loginBody">
+	<div class="loginBackgound">
+	<div class="loginPage">
+		<div class="loginHeader">
+			<img src="byulogo.png" alt="BYU Logo">
+		</div> 
+		<h1>Sign In To BYU Math Grading<h2>
+		<form id="loginForm" onsubmit="return mySubmitFunction()">
+			<input type="text" name="userName" placeholder="Username" id="userName">
+			<br>
+			<input type="password" name="password" placeholder="Password" id="passWord">
+			<br>
+			<input type="submit" value="Submit">
+		</form> 
+	</div>
+	</div>
+</div>
+
+<div id="mainPage" class="homePage">
+
+<!-- Main Page Header-->
+	<div class="Header">
+		<img src="byulogo.png" alt="BYU Logo">
+		
+		<ul>
+			<li><a class = "label1" onclick="showProjects()">Project</a></li>
+			<li><a class = "label2">Edit</a></li>
+			<li><a class = "label3">Tools</a></li>
+			<li><a class = "label4">Help</a></li>
+			<li><a class = "label5" onclick="logout()">Logout</a></li>
+		</ul>
+	</div> 
+	<div class="theBody">
+	<div class="bodyMenu">
+		<ul>
+			<li><a id="prepTab" onclick="showPrep()">Prepartion</a></li>
+			<li><a id="dataTab" onclick="showData()">Data Capture</a></li>
+			<li><a id="markTab" onclick="showMark()">Marking</a></li>
+			<li><a id="reportTab" onclick="showReport()">Reports</a></li>
+		</ul>
+	</div>
+	</div>
+
+<!-- Marking Form -->
+
+	<div class="tbody" id="marking">
+		<p>Marking</p>
+		<input type="checkbox" name="Absentees" value="absent">Update Marking Scale<br>
+		<button><i class="fas fa-edit"></i>Mark</button>
+		<button><i class="fas fa-edit"></i>Look at Marks</button>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>Mean: {{mean_marks}}</p>
+		</div>
+		<hr>
+		<p>Student Identification</p>
+		<button><i class="fas fa-edit"></i>Set file</button>
+		<button><i class="fas fa-edit"></i>path</button>
+		<button><i class="fas fa-edit"></i>Edit List</button>
+		<button><i class="fas fa-edit"></i>Automatic</button>
+		<button><i class="fas fa-edit"></i>Manual</button>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>All completed answer sheets are associated with a student name</p>
+		</div>
+		<br>
+	</div>
+
+<!-- Data Form -->
+
+	<div class="tbody" id="dataCap">
+		<div class="dataCap">
+			<p>Data capture after examination</p>
+			<button><i class="fas fa-clipboard-check"></i>Automatic</button>
+			<button><i class="far fa-hand-pointer"></i>Manual</button>
+		</div>
+		<hr>
+		<div class="diagnosis">
+		<p>Diagnosis</p>
+		<div class="dataPages">
+		<p>Pages:</p>
+		</div>
+
+		<div class="dataTable">
+		<table>
+			<tr>
+				<th>identifier</th>
+				<th>updated</th>
+				<th>MSE</th>
+				<th>sensitivity</th>
+			</tr>
+			<tr>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+				<td>{{??}}</td>
+			</tr>
+		</table>
+		</div>
+		<div class="tableButtons">
+		<button><i class="fas fa-search-plus"></i>Zooms</button>
+		<button><i class="fas fa-edit"></i>Layout</button>
+		<button><i class="fas fa-trash-alt"></i>Remove</button>
+		</div>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>Data capture from {{papers}} comlete papers</p>
+		</div>
+		<div class="lineCircle">
+			<div class="circle"></div>
+			<p>All Scans were properly recognized</p>
+		</div>
+		</div>
+	
+	</div>
+<!-- First Form -->
+
+		<div class="tbody" id="preparation">
+			<br>
+			<button><i class="far fa-lightbulb"></i></button>
+			<button>LaTex</button>
+			<button><i class="fas fa-edit"></i>Edit Source File</button>
+			<p>{{current directory}}</p>
+			<hr>
+			<div class="numPages">
+				<p>Number of papers:</p>
+				<input class="number" type="number">
+			</div>
+			<button><i class="fa fa-sync"></i>Update Documents</button>
+			<br>
+			<button>Question</button>
+			<button>Solution</button>
+		
+			<div class="lineCircle">
+				<div class="circle"></div>
+				<p>Working Documents last update: </p>
+			</div>
+			<hr>
+			<button>Layout Detection</button>
+			<br>
+			<button><i class="far fa-lightbulb"></i>Check Layouts</button>
+			<div class="lineCircle">
+				<div class="circle"></div>
+				<p>Processed {{pages}} pages</p>
+			</div>
+			<hr>
+			<button><i class="fa fa-print"></i>Print Papers</button>
+		</div>
+
+<!-- Mark Export Form -->
+
+
+	<div class="tbody" id="report">
+		<p>Mark Export</p>
+		<button><i class="fas fa-edit"></i></button>
+		<button><i class="fas fa-edit"></i>Export</button>
+		<div class="numPages">
+			<p> and</p>
+			<button><i class="fas fa-edit"></i>open the file</button>
+		</div>
+		<div class="numPages">
+			<p> File Name Model:</p>
+			<button><i class="fas fa-edit"></i>Name</button>
+		</div>
+		<br>
+		<input type="checkbox" name="Absentees" value="absent">Include Absentees<br>
+		<input type="checkbox" name="Absentees" value="absent">Stats Table<br>
+		<input type="checkbox" name="Absentees" value="absent">Indicative stats Table<br>
+		<input type="checkbox" name="Absentees" value="absent">Score Groups <br>
+		<button><i class="fas fa-edit"></i>Choose Columns</button>
+		<button><i class="fas fa-edit"></i>Export Directory</button>
+		<hr>
+		
+		<p>Anotated Papers</p>
+		
+		<input type="checkbox" name="Absentees" value="absent">Compose<br>
+		
+		<div class="numPages">
+				<p> File Name Model:</p>
+				<input class="text" type="text">
+		</div>
+		<button><i class="fas fa-edit"></i>All Students</button>
+		<button><i class="fas fa-edit"></i>Annotate Papers</button>
+		<button><i class="fas fa-edit"></i>Look</button>
+		<button><i class="fas fa-edit"></i>Send</button>
+		<br>
+	</div>
+	
+	
+<!-- Project List -->
+  <div id="projectMenu">
+  <div class="projectSelect">
+  <div class="projectMenu">	
+    <ul>
+      <li><button onclick="showNew()">New Project</button></li>
+      <li><button onclick="showOld()">Past Projects</button></li>
+    </ul>
+  </div> 
+  <br>
+  <div id="oldProjects">
+  <?php include 'projects.php';?>
+  <form enctype="multipart/form-data" id="uploadFile" method="POST">
+    <p>Upload Your File</p>
+    <input type="file" name="uploaded_file"></input><br>
+    <input type="submit" value="Upload"></input>
+  </form>
+  </div>
+  
+  <div class="newProject" id="newProject">
+  <form enctype="multipart/form-data" id="createNew" method="POST">
+    <p>Create a New Project</p>
+    <input type="text" name="newDir"></input><br>
+    <input type="submit" value="Sumbit"></input>
+  </form>
+  </div>
+  
+  <button onclick="exitProjects()">exit</button>
+  </div>
+  </div>
+
+	
+
+	</div>
+	
+	</body>
+</html>
